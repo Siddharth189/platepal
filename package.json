@@ -1,0 +1,29 @@
+{
+  "name": "platepal",
+  "version": "1.0.0",
+  "description": "This is a app made with namaste react live course",
+  "homepage": "https://siddharth189.github.io/platepal",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "npx parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Siddharth Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.2"
+  }
+}
