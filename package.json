@@ -2,12 +2,12 @@
   "name": "platepal",
   "version": "1.0.0",
   "description": "This is a app made with namaste react live course",
-  "homepage": "https://siddharth189.github.io/platepal",
+  "homepage": "https://siddharth189.github.io/platepal/",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "build": "parcel build index.html --public-url /platepal/",
+    "deploy": "gh-pages -d dist",
     "start": "npx parcel index.html",
-    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Siddharth Singh",
