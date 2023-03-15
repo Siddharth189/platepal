@@ -9,7 +9,7 @@ const Header = () => {
   const cartItems = useSelector((state) => state.cart.items);
   return (
     <div className="header">
-      <Link to="/">
+      <Link to={"/"}>
         <img src={Logo} alt="logo" />
       </Link>
       <div className="nav-items">

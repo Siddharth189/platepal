@@ -5,7 +5,7 @@
   "homepage": "https://siddharth189.github.io/platepal/",
   "scripts": {
     "predeploy": "npm run build",
-    "build": "parcel build index.html --public-url /platepal/",
+    "build": "parcel build index.html",
     "deploy": "gh-pages -d dist",
     "start": "npx parcel index.html",
     "test": "jest"
