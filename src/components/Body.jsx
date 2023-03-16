@@ -64,7 +64,7 @@ const Body = () => {
           {filteredRestraunts.length !== 0 ? (
             filteredRestraunts?.map((restraunt) => (
               <Link
-                to={"/platepal/restraunt/" + restraunt.data.id}
+                to={"/restraunt" + restraunt.data.id}
                 key={restraunt.data.id}
                 className="card-link"
               >
