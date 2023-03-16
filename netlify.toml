@@ -7,3 +7,4 @@ status = 200
 from = "/api/*"
 to = "https://www.swiggy.com/dapi/:splat"
 status = 200
+force = true

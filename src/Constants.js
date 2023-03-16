@@ -1,4 +1,4 @@
-// Put all the hardcoded data heres
+// Put all the hardcoded datas here
 
 export const DESKTOP_WEB_LISTING =
   "/api/restaurants/list/v5?lat=26.1756772&lng=91.7417143&page_type=DESKTOP_WEB_LISTING";
