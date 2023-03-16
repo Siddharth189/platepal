@@ -4,6 +4,6 @@ to = "/index.html"
 status = 200
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
+from = "/api/*"
+to = "https://www.swiggy.com/dapi/:splat"
 status = 200
