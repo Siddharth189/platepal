@@ -61,10 +61,10 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div className="restraunt-list">
-          {filteredRestraunts.length !== 0 ? (
+          {filteredRestraunts?.length !== 0 ? (
             filteredRestraunts?.map((restraunt) => (
               <Link
-                to={"/restraunt" + restraunt.data.id}
+                to={"/restraunt/" + restraunt.data.id}
                 key={restraunt.data.id}
                 className="card-link"
               >
