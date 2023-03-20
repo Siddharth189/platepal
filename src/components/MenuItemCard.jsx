@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { IMG_CLOUD_URL } from "../Constants";
 import { addItem } from "../Utils/cartSlice";
 
-const MenuItemCard = ({ id, name, cloudinaryImageId, price }) => {
+const MenuItemCard = ({ id, name, imageId, price, description }) => {
   const dispatch = useDispatch();
 
   const addItems = () => {
@@ -10,8 +10,9 @@ const MenuItemCard = ({ id, name, cloudinaryImageId, price }) => {
       addItem({
         id: id,
         name: name,
-        cloudinaryImageId: cloudinaryImageId,
+        imageId: imageId,
         price: price,
+        description: description,
       })
     );
   };
@@ -20,9 +21,10 @@ const MenuItemCard = ({ id, name, cloudinaryImageId, price }) => {
       <div>
         <h2>{name}</h2>
         <p> &#8377; {price / 100.0}</p>
+        <p> {description}</p>
       </div>
       <div className="flex-column">
-        <img src={IMG_CLOUD_URL + cloudinaryImageId} alt="" />
+        <img src={IMG_CLOUD_URL + imageId} alt="" />
         <button className="menu-btn" onClick={() => addItems()}>
           ADD +
         </button>

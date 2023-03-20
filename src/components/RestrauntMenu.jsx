@@ -7,7 +7,8 @@ import CartShimmer from "./CartShimmer";
 
 const RestrauntMenu = () => {
   const { id } = useParams();
-  const restraunt = useRestraunt(id);
+  const { restraunt } = useRestraunt(id);
+  const { restrauntMenu } = useRestraunt(id);
 
   const ratingColor = restraunt?.avgRating >= 4 ? "#00ad1d" : "#ec3838";
 
@@ -28,16 +29,19 @@ const RestrauntMenu = () => {
               <AiTwotoneStar /> {restraunt?.avgRating}
             </h4>{" "}
             |<h4>{restraunt?.sla.slaString}</h4> |
-            <h4>{restraunt?.costForTwoMsg}</h4>
+            <h4>{restraunt?.costForTwoMessage}</h4>
           </div>
         </div>
       </div>
       <div className="menu">
-        <h1>Recommended</h1>
         <ul>
-          {Object.values(restraunt?.menu?.items).map((item) => (
-            <li key={item.id}>
-              <MenuItemCard {...item} />
+          {restrauntMenu?.map((item, index) => (
+            <li key={index}>
+              {/* <MenuItemCard {...item} /> */}
+              <h1>{item?.card?.card?.title}</h1>
+              {item?.card?.card?.itemCards?.map((menuItem) => (
+                <MenuItemCard {...menuItem.card.info} />
+              ))}
             </li>
           ))}
         </ul>
