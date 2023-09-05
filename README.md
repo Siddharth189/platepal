@@ -8,12 +8,14 @@ for a seamless and delightful food ordering experience.
 
 ## Screenshots
 
+<!-- https://github.com/Siddharth189/platepal/blob/main/screenshots/about_page.png -->
+
 ![Home Page](https://github.com/Siddharth189/platepal/blob/main/screenshots/home_page.png)
-![Restraunt Page](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/restraunt_page.png)
-![Cart](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/cart_page.png)
-![Contact](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/contact_page.png)
-![About](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/about_page.png)
-![Error](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/error_page.png)
+![Restraunt Page](https://github.com/Siddharth189/platepal/blob/main/screenshots/restraunt_page.png)
+![Cart](https://github.com/Siddharth189/platepal/blob/main/screenshots/cart_page.png)
+![Contact](https://github.com/Siddharth189/platepal/blob/main/screenshots/contact_page.png)
+![About](https://github.com/Siddharth189/platepal/blob/main/screenshots/about_page.png)
+![Error](https://github.com/Siddharth189/platepal/blob/main/screenshots/error_page.png)
 
 ## Installation
 
