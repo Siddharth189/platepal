@@ -35,13 +35,18 @@ const RestrauntMenu = () => {
       </div>
       <div className="menu">
         <ul>
+          <p
+            style={{ fontSize: "1.5rem", lineHeight: "0.3", marginTop: "30px" }}
+          >
+            Recommended
+          </p>
+          <p style={{ color: "grey", lineHeight: "0.5" }}>
+            {restrauntMenu?.length} ITEMS
+          </p>
           {restrauntMenu?.map((item, index) => (
-            <li key={index}>
-              {/* <MenuItemCard {...item} /> */}
-              <h1>{item?.card?.card?.title}</h1>
-              {item?.card?.card?.itemCards?.map((menuItem) => (
-                <MenuItemCard {...menuItem.card.info} />
-              ))}
+            <li key={item?.id}>
+              {console.log("Well item is the: ", item)}
+              <MenuItemCard {...item} />
             </li>
           ))}
         </ul>

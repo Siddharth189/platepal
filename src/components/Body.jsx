@@ -5,23 +5,12 @@ import { Link } from "react-router-dom";
 import { filterData } from "../Utils/helper";
 import { DESKTOP_WEB_LISTING } from "../Constants";
 import useOnline from "../Utils/useOnline";
+import useResData from "../Utils/useResData";
 
 const Body = () => {
-  const [allRestraunts, setAllRestraunts] = useState([]);
-  const [filteredRestraunts, setFilteredRestraunts] = useState([]);
+  const [allRestaurants, FilterRes] = useResData(DESKTOP_WEB_LISTING);
+  const [filteredRestaurants, setFilteredRestaurants] = useState(null);
   const [searchText, setSearchText] = useState("");
-
-  useEffect(() => {
-    getRestraunts();
-  }, []);
-
-  async function getRestraunts() {
-    const data = await fetch(DESKTOP_WEB_LISTING);
-    const json = await data.json();
-    // Optional Chaning
-    setAllRestraunts(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestraunts(json?.data?.cards[2]?.data?.data?.cards);
-  }
 
   const isOnline = useOnline();
   if (!isOnline) {
@@ -32,6 +21,22 @@ const Body = () => {
       </h1>
     );
   }
+  if (!allRestaurants) return null;
+  const searchData = (searchText, restaurants) => {
+    if (searchText !== "") {
+      const filteredData = filterData(searchText, restaurants);
+      setFilteredRestaurants(filteredData);
+      setErrorMessage("");
+      if (filteredData?.length === 0) {
+        setErrorMessage(
+          `Sorry, we couldn't find any results for "${searchText}"`
+        );
+      }
+    } else {
+      setErrorMessage("");
+      setFilteredRestaurants(restaurants);
+    }
+  };
 
   return (
     <>
@@ -50,29 +55,26 @@ const Body = () => {
           onClick={() => {
             // filter the restraunt list as per the search
             // and set the restraunts
-            const data = filterData(searchText, allRestraunts);
-            setFilteredRestraunts(data);
+            searchData(searchText, allRestaurants);
           }}
         >
           Search
         </button>
       </div>
-      {allRestraunts?.length === 0 ? (
+      {allRestaurants?.length === 0 && FilterRes?.length === 0 ? (
         <Shimmer />
       ) : (
         <div className="restraunt-list">
-          {filteredRestraunts?.length !== 0 ? (
-            filteredRestraunts?.map((restraunt) => (
+          {(filteredRestaurants === null ? FilterRes : filteredRestaurants).map(
+            (restraunt) => (
               <Link
-                to={"/restraunt/" + restraunt.data.id}
-                key={restraunt.data.id}
+                to={"/restraunt/" + restraunt?.info?.id}
+                key={restraunt?.info?.id}
                 className="card-link"
               >
-                <RestrauntCard {...restraunt.data} />
+                <RestrauntCard {...restraunt?.info} />
               </Link>
-            ))
-          ) : (
-            <p> Sorry, we couldn't find any results for "{searchText}" </p>
+            )
           )}
         </div>
       )}
