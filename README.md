@@ -1,4 +1,4 @@
-# HMS
+# PLATEPAL
 
 A food delivery app that utilizes Swiggy’s API to access
 restaurant data.
